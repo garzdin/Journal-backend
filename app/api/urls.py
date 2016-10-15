@@ -25,7 +25,7 @@ router.register(r'users', UserViewSet)
 urlpatterns = [
     url(r'^', include(router.urls)),
     url(r'^auth/', include('rest_framework.urls', namespace='rest_framework')),
-    url(r'^token/auth/', obtain_jwt_token),
-    url(r'^token/refresh/', refresh_jwt_token),
-    url(r'^token/verify/', verify_jwt_token),
+    url(r'^token/auth/', obtain_jwt_token, name='token-auth'),
+    url(r'^token/refresh/', refresh_jwt_token, name='token-refresh'),
+    url(r'^token/verify/', verify_jwt_token, name='token-verify'),
 ]
